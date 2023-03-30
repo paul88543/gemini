@@ -1,0 +1,30 @@
+.icon {
+    border-radius: 100px;
+    width: 200px;
+    height: auto;
+}
+
+.img {
+    margin-right: 50px;
+}
+
+.productItem {
+    justify-content: center;
+}
+
+.productItem:not(:first-child) {
+    margin-top: 3rem;
+}
+
+.operate {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+.operate a {
+    display: block;
+    max-width: 100px;
+    margin: 10px 0;
+    padding: 10px 20px;
+}
