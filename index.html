@@ -1,43 +1,102 @@
 <html>
-    <head>
-        <title>Demo Site</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-        <link rel="stylesheet" href="assets/css/style.css">
-    </head>
-    <body class="bg-light">
-        <div class="container-md text-center mt-5">
-            <div class="d-flex productItem">
-              <div class="d-flex img">
-                <img src="assets/img/CaribbeanBingo.png" alt="" class="icon">
-              </div>
-              <div class="d-flex flex-md-column operate">
-                <a href="https://uat-e01.elsgame.cc/caribbean-bingo/?ProductId=C89&Token=879f27cf73629216bfa049dca4af097d8b7305294e8b755583daea59ac9aab664e03ecd0b3ed5565247569a5b98de0d375ba067ccee4cdc265f4c57133eb56ea" target="_blank" class="btn btn-primary">Link 1</a>
-                <a href="https://uat-e01.elsgame.cc/caribbean-bingo/?ProductId=C89&Token=879f27cf73629216bfa049dca4af097d8b7305294e8b755583daea59ac9aab6634ce85abe60c79e36ae6a2287ef6905675ba067ccee4cdc265f4c57133eb56ea" target="_blank" class="btn btn-primary">Link 2</a>
-                <a href="https://uat-e01.elsgame.cc/caribbean-bingo/?ProductId=C89&Token=879f27cf73629216bfa049dca4af097d8b7305294e8b755583daea59ac9aab668c71c015f8478b9e3992ebf4d33c2d1875ba067ccee4cdc265f4c57133eb56ea" target="_blank" class="btn btn-primary">Link 3</a>
-              </div>
-            </div>
 
-            <div class="d-flex productItem">
-                <div class="d-flex img">
-                    <img src="assets/img/OdinBingo.png" alt="" class="icon">
-                  </div>
-                  <div class="d-flex flex-md-column operate">
-                    <a href="https://uat-e01.elsgame.cc/odin-bingo/?ProductId=C89&Token=879f27cf73629216bfa049dca4af097d8b7305294e8b755583daea59ac9aab664e03ecd0b3ed5565247569a5b98de0d375ba067ccee4cdc265f4c57133eb56ea" target="_blank" class="btn btn-primary">Link 1</a>
-                    <a href="https://uat-e01.elsgame.cc/odin-bingo/?ProductId=C89&Token=879f27cf73629216bfa049dca4af097d8b7305294e8b755583daea59ac9aab6634ce85abe60c79e36ae6a2287ef6905675ba067ccee4cdc265f4c57133eb56ea" target="_blank" class="btn btn-primary">Link 2</a>
-                    <a href="https://uat-e01.elsgame.cc/odin-bingo/?ProductId=C89&Token=879f27cf73629216bfa049dca4af097d8b7305294e8b755583daea59ac9aab668c71c015f8478b9e3992ebf4d33c2d1875ba067ccee4cdc265f4c57133eb56ea" target="_blank" class="btn btn-primary">Link 3</a>
-                  </div>
-            </div>
-            <div class="d-flex productItem">
-                <div class="d-flex img">
-                    <img src="assets/img/CaveBingo.png" alt="" class="icon">
-                  </div>
-                  <div class="d-flex flex-md-column operate">
-                    <a href="https://uat-e01.elsgame.cc/cave-bingo/?ProductId=C89&Token=879f27cf73629216bfa049dca4af097d8b7305294e8b755583daea59ac9aab664e03ecd0b3ed5565247569a5b98de0d375ba067ccee4cdc265f4c57133eb56ea" target="_blank" class="btn btn-primary">Link 1</a>
-                    <a href="https://uat-e01.elsgame.cc/cave-bingo/?ProductId=C89&Token=879f27cf73629216bfa049dca4af097d8b7305294e8b755583daea59ac9aab6634ce85abe60c79e36ae6a2287ef6905675ba067ccee4cdc265f4c57133eb56ea" target="_blank" class="btn btn-primary">Link 2</a>
-                    <a href="https://uat-e01.elsgame.cc/cave-bingo/?ProductId=C89&Token=879f27cf73629216bfa049dca4af097d8b7305294e8b755583daea59ac9aab668c71c015f8478b9e3992ebf4d33c2d1875ba067ccee4cdc265f4c57133eb56ea" target="_blank" class="btn btn-primary">Link 3</a>
-                  </div>
-            </div>
-          </div>
-    </body>
+<head>
+  <title>Demo Site</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>
+    let userList = {
+      'C89test0100': '879f27cf73629216bfa049dca4af097d8b7305294e8b755583daea59ac9aab664e03ecd0b3ed5565247569a5b98de0d375ba067ccee4cdc265f4c57133eb56ea',
+      'C89test0101': '879f27cf73629216bfa049dca4af097d8b7305294e8b755583daea59ac9aab6634ce85abe60c79e36ae6a2287ef6905675ba067ccee4cdc265f4c57133eb56ea',
+      'C89test0102': '879f27cf73629216bfa049dca4af097d8b7305294e8b755583daea59ac9aab668c71c015f8478b9e3992ebf4d33c2d1875ba067ccee4cdc265f4c57133eb56ea'
+    }
+
+    function playBingo(gameName) {
+      let currentAccount = userList[document.getElementById("account").value];
+      window.open("https://uat-e01.elsgame.cc/" + gameName + "/?ProductId=C89&Token=" + currentAccount);
+    }
+
+    function playHashGame(gameName) {
+      let currentAccount = userList[document.getElementById("account").value];
+      window.open("https://uat-e02.elsgame.cc/" + gameName + "/?params=" + currentAccount);
+    }
+  </script>
+</head>
+
+<body class="bg-light">
+  <div class="container-md mt-5">
+    <select id="account" class="form-select mb-3">
+      <option selected>Account</option>
+      <option value="C89test0100" selected>C89test0100</option>
+      <option value="C89test0101">C89test0101</option>
+      <option value="C89test0102">C89test0102</option>
+    </select>
+
+    <h2>Bingo Games</h2>
+    <hr>
+    <div class="d-flex flex-wrap">
+      <div class="productItem">
+        <img src="assets/img/CaribbeanBingo.png" alt="" class="icon" onclick="playBingo('caribbean-bingo')">
+        <h4 class="gameName">Caribbean Bingo</h4>
+      </div>
+      <div class="productItem">
+        <img src="assets/img/OdinBingo.png" alt="" class="icon" onclick="playBingo('odin-bingo')">
+        <h4 class="gameName">Odin Bingo</h4>
+      </div>
+      <div class="productItem">
+        <img src="assets/img/CaveBingo.png" alt="" class="icon" onclick="playBingo('cave-bingo')">
+        <h4 class="gameName">Cave Bingo</h4>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-md mt-5">
+    <h2>Hash Games</h2>
+    <hr>
+    <div class="d-flex flex-wrap">
+      <div class="productItem">
+        <img src="assets/img/crash.png" alt="" class="icon" onclick="playHashGame('Crash')">
+        <h4 class="gameName">Crash</h4>
+      </div>
+      <div class="productItem">
+        <img src="assets/img/Plinko.png" alt="" class="icon" onclick="playHashGame('Plinko')">
+        <h4 class="gameName">Plinko</h4>
+      </div>
+      <div class="productItem">
+        <img src="assets/img/Hilo.png" alt="" class="icon" onclick="playHashGame('Hilo')">
+        <h4 class="gameName">Hilo</h4>
+      </div>
+      <div class="productItem">
+        <img src="assets/img/Keno.png" alt="" class="icon" onclick="playHashGame('Keno')">
+        <h4 class="gameName">Keno</h4>
+      </div>
+      <div class="productItem">
+        <img src="assets/img/Mines.png" alt="" class="icon" onclick="playHashGame('Mines')">
+        <h4 class="gameName">Mines</h4>
+      </div>
+      <div class="productItem">
+        <img src="assets/img/Limbo.png" alt="" class="icon" onclick="playHashGame('Limbo')">
+        <h4 class="gameName">Limbo</h4>
+      </div>
+      <div class="productItem">
+        <img src="assets/img/Dice.png" alt="" class="icon" onclick="playHashGame('Dice')">
+        <h4 class="gameName">Dice</h4>
+      </div>
+      <div class="productItem">
+        <img src="assets/img/Poker.png" alt="" class="icon" onclick="playHashGame('VideoPoker')">
+        <h4 class="gameName">Video Poker</h4>
+      </div>
+      <div class="productItem">
+        <img src="assets/img/Wheel.png" alt="" class="icon" onclick="playHashGame('Wheel')">
+        <h4 class="gameName">Wheel</h4>
+      </div>
+      <div class="productItem">
+        <img src="assets/img/Blackjack.png" alt="" class="icon" onclick="playHashGame('Blackjack')">
+        <h4 class="gameName">Blackjack</h4>
+      </div>
+    </div>
+  </div>
+</body>
+
 </html>
