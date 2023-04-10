@@ -25,13 +25,19 @@
 </head>
 
 <body class="bg-light">
-  <div class="container-md mt-5">
-    <select id="account" class="form-select mb-3">
-      <option selected>Account</option>
-      <option value="C89test0100" selected>C89test0100</option>
-      <option value="C89test0101">C89test0101</option>
-      <option value="C89test0102">C89test0102</option>
-    </select>
+  <div class="container-md mt-3 mt-md-5">
+    <div class="p-3 bg-warning bg-opacity-10 border border-warning-subtle rounded text-md-center">
+      One account can only play one game at a time. If you cannot play, please switch accounts.
+    </div>
+    <div class="top-tool d-flex align-items-center">
+      <div class="label">Account</div>
+      <select id="account" class="form-select">
+        <option selected>Account</option>
+        <option value="C89test0100" selected>C89test0100</option>
+        <option value="C89test0101">C89test0101</option>
+        <option value="C89test0102">C89test0102</option>
+      </select>
+    </div>
 
     <h2>Bingo Games</h2>
     <hr>
@@ -52,11 +58,11 @@
   </div>
 
   <div class="container-md mt-5">
-    <h2>Hash Games</h2>
+    <h2>Hash Games（Demo Version）</h2>
     <hr>
     <div class="d-flex flex-wrap">
-      <div class="productItem">
-        <img src="assets/img/crash.png" alt="" class="icon" onclick="playHashGame('Crash')">
+      <div class="productItem disabled">
+        <img src="assets/img/crash.png" alt="" class="icon">
         <h4 class="gameName">Crash</h4>
       </div>
       <div class="productItem">

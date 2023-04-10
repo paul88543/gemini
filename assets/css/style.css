@@ -1,6 +1,10 @@
-#account {
-    max-width: 200px;
-    margin: 10px 10px 0 auto;
+.top-tool {
+    max-width: 250px;
+    margin: 10px 0 0 auto;
+}
+
+.label {
+    margin-right: 1rem;
 }
 
 .icon {
@@ -18,6 +22,18 @@
 .productItem {
     padding: 10px;
     text-align: center;
+}
+
+.productItem.disabled {
+    opacity: 0.6;
+}
+
+.productItem.disabled .icon {
+    cursor: inherit;
+}
+
+.productItem.disabled .icon:hover {
+    opacity: 1;
 }
 
 .operate {
