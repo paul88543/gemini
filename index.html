@@ -6,15 +6,15 @@
   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/style.css?v=1.2">
   <script>
-    let host = window.location.host; 
+    // let host = window.location.host; 
     
-    document.addEventListener("DOMContentLoaded", () => {
-      if (host.includes('www')) { // Prod remove Hash Game
-        var hashgame = document.getElementById("hash-game");
-        hashgame.classList.remove("d-none");
-    }
+    // document.addEventListener("DOMContentLoaded", () => {
+    //   if (host.includes('www')) { // Prod remove Hash Game
+    //     var hashgame = document.getElementById("hash-game");
+    //     hashgame.classList.remove("d-none");
+    // }
     
-    });
+    // });
     
     let userList = {
       'C89test0100': '879f27cf73629216bfa049dca4af097d8b7305294e8b755583daea59ac9aab664e03ecd0b3ed5565247569a5b98de0d375ba067ccee4cdc265f4c57133eb56ea',
@@ -24,12 +24,14 @@
 
     function playBingo(gameName) {
       let currentAccount = userList[document.getElementById("account").value];
-      window.open(host + "/" + gameName + "/?ProductId=C89&Token=" + currentAccount);
+      window.open("https://uat-e01.elsgame.cc/" + gameName + "/?ProductId=C89&Token=" + currentAccount);
+
     }
 
     function playHashGame(gameName) {
       let currentAccount = userList[document.getElementById("account").value];
-      window.open(host + "/" + gameName + "/?params=" + currentAccount);
+      window.open("https://uat-e02.elsgame.cc/" + gameName + "/?param=" + currentAccount);
+
     }
   </script>
 </head>
@@ -67,7 +69,8 @@
     </div>
   </div>
 
-  <div id="hash-game" class="container-md mt-5 d-none">
+  <!-- <div id="hash-game" class="container-md mt-5 d-none"> -->
+  <div id="hash-game" class="container-md mt-5">
     <h2>Hash Games（Demo Version）</h2>
     <hr>
     <div class="d-flex flex-wrap">
